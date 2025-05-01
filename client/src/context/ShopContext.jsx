@@ -15,6 +15,7 @@ const ShopContextProvider = ({children}) => {
   const [search, setSearch] = useState('')
   const [showSearch, setShowSearch] = useState(false)
   const [cartItems, setCartItems] = useState({})
+  const [loading, setLoading] = useState(false)
   const navigate = useNavigate();
 
   const addToCart = async (itemId, size) => {
@@ -105,6 +106,7 @@ const ShopContextProvider = ({children}) => {
             totalAmount += itemInfo.price * cartItems[item][size];
           }
         }catch (err) {
+          console.log(err)
           toast.error("can't calculate Total");
           return
         }
@@ -116,6 +118,7 @@ const ShopContextProvider = ({children}) => {
 
   const getProductsData = async  () => {
     try {
+      setLoading(true)
       const res = await axios.get(`${backendUrl}/api/products`)
       if(res.data.success){
         setProducts(res.data.products);
@@ -126,11 +129,11 @@ const ShopContextProvider = ({children}) => {
       toast.error('Some error occured!!')
       console.log(err)
     }
+    setLoading(false)
   }
 
   const getUserCart = async (token) => {
     try {
-      console.log(token)
       const res = await axios.post(`${backendUrl}/api/cart/get`, {}, {
         headers: {
           token: token
@@ -155,6 +158,7 @@ const ShopContextProvider = ({children}) => {
   }, [])
 
   const value = {
+    loading,
     token,
     setToken,
     products,
@@ -166,6 +170,7 @@ const ShopContextProvider = ({children}) => {
     showSearch,
     setShowSearch,
     cartItems,
+    setCartItems,
     addToCart,
     getCartCount,
     updateQuantity,
@@ -177,7 +182,7 @@ const ShopContextProvider = ({children}) => {
 
   return (
     <ShopContext.Provider value={value}>
-      {children}
+      {!loading && children}
     </ShopContext.Provider>
   )
 }

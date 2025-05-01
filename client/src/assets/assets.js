@@ -17,7 +17,6 @@ import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
 
 export const assets = {
-    logo,
     hero_img,
     cart_icon,
     dropdown_icon,

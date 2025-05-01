@@ -23,7 +23,7 @@ const List = ({ token }) => {
 
   const removeProduct = async (id) => {
     try {
-      const res = await axios.delete(`${backendUrl}/api/products/`, {id}, { 
+      const res = await axios.delete(`${backendUrl}/api/products/${id}`, { 
         headers: {
           token
         }
@@ -63,7 +63,7 @@ const List = ({ token }) => {
           list.map((item, index) => (
             <div key={index} className='grid grid-cols-[1fr_3fr_1fr] md:grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center gap-2 px-2 py-1 bg-gray-100 text-sm rounded-md'>
               
-              <img src={list[0].images[0]} alt={item.name} className='w-16 h-16 object-cover' />
+              <img src={list[index].images[0]} alt={item.name} className='w-16 h-16 object-cover' />
               
               <p className=''>{item.name}</p>
               <p className=''>{item.category}</p>

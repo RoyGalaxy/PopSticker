@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import Home from './pages/Home'
@@ -15,8 +15,9 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import SearchBar from './components/SearchBar'
 import Aurora from './components/ReactBits/Aurora';
-import Animation from './pages/Animation';
+// import Animation from './pages/Animation';
 import ScrollToTop from './components/ScrollToTop';
+import { ShopContext } from './context/ShopContext';
 
 
 const App = () => {
@@ -46,7 +47,7 @@ const App = () => {
           <Route path='/collection' element={<Collection />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/animation' element={<Animation />} />
+          {/* <Route path='/animation' element={<Animation />} /> */}
           <Route path='/product/:productId' element={<Product />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/login' element={<Login />} />
@@ -54,7 +55,7 @@ const App = () => {
           <Route path='/place-order' element={<PlaceOrder />} />
           <Route path='/orders' element={<Orders />} />
 
-          
+
         </Routes>
         <Footer />
       </div>
