@@ -1,5 +1,7 @@
 import OrderModel from "../models/Order.js";
 
+const currency = "inr";
+const deliveryFee = 10;
 
 
 
@@ -11,8 +13,8 @@ const placeOrder = async (req, res) => {
         const order = await OrderModel.create({
             userId: userId,
             items,
-            amount: totalAmount,
             address: address,
+            amount: totalAmount,
             paymentMethod,
             payment: true,
         })
