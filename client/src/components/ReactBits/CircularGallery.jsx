@@ -335,21 +335,21 @@ class App {
   }
   createMedias(items, bend = 1, textColor, borderRadius, font) {
     const defaultItems = [
-      { image: `/src/assets/images/1.png`, text: '' },
-      { image: `/src/assets/images/2.png`, text: '' },
-      { image: `/src/assets/images/3.png`, text: '' },
-      { image: `/src/assets/images/4.png`, text: '' },
-      { image: `/src/assets/images/5.png`, text: '' },
-      { image: `/src/assets/images/6.png`, text: '' },
-      { image: `/src/assets/images/7.png`, text: '' },
-      { image: `/src/assets/images/8.png`, text: '' },
-      { image: `/src/assets/images/9.png`, text: '' },
-      { image: `/src/assets/images/10.png`, text: '' },
-      { image: `/src/assets/images/11.png`, text: '' },
-      { image: `/src/assets/images/12.png`, text: "" },
-      { image: `/src/assets/images/13.png`, text: "" },
-      { image: `/src/assets/images/14.png`, text: "" },
-      { image: `/src/assets/images/15.png`, text: "" }
+      { image: `/assets/images/1.png`, text: '' },
+      { image: `/assets/images/2.png`, text: '' },
+      { image: `/assets/images/3.png`, text: '' },
+      { image: `/assets/images/4.png`, text: '' },
+      { image: `/assets/images/5.png`, text: '' },
+      { image: `/assets/images/6.png`, text: '' },
+      { image: `/assets/images/7.png`, text: '' },
+      { image: `/assets/images/8.png`, text: '' },
+      { image: `/assets/images/9.png`, text: '' },
+      { image: `/assets/images/10.png`, text: '' },
+      { image: `/assets/images/11.png`, text: '' },
+      { image: `/assets/images/12.png`, text: "" },
+      { image: `/assets/images/13.png`, text: "" },
+      { image: `/assets/images/14.png`, text: "" },
+      { image: `/assets/images/15.png`, text: "" }
     ]
     const galleryItems = items && items.length ? items : defaultItems
     this.mediasImages = galleryItems.concat(galleryItems)
